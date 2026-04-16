@@ -27,5 +27,47 @@ import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner reader = new Scanner(System.in);
+        ArrayList<String> books = new ArrayList<String>();
+        ArrayList<String> unique = new ArrayList<String>();
+        ArrayList<String> yes = new ArrayList<String>();
+        yes.add("yes");
+        int count = 0;
+        while (count == 0){
+            System.out.println("Give a book");
+              String name = reader.nextLine();
+             
+
+        if (books.contains(name)){
+            System.out.println("Do you want to remove this title?");
+            String responce = reader.nextLine();
+       
+
+            if (yes.contains(responce)){
+                
+                books.remove(name);
+            }
+           
+           
+        } else{
+             books.add(name);
+          
+
+        }
+        if (books.contains("done")){
+             count = 1;
+             books.remove("done");
+             System.out.println("Titles:");
+             for (String names : books){
+                System.out.println(names);
+             }
+            
+        } 
+        }
+        
+        
     }
+    
+    
+
 }
+
